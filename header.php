@@ -48,7 +48,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<?php } else { ?>
 						<div class="custom-navbar-logo-wrapper">
-							<?php the_custom_logo(); ?>
+							<div>
+								<?php the_custom_logo(); ?>
+							</div>
 						</div>
 					<?php } ?><!-- end custom logo -->
 

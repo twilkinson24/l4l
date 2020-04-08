@@ -4,6 +4,24 @@
 /* Header */
 
 /* Navbar */
-.custom-navbar-logo-wrapper {
-    background-color: $light-gray;
+nav.navbar {
+    padding: 1rem 0;
+    .custom-navbar-logo-wrapper {
+        // background-color: $light-gray;
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 1500px;
+            height: 100%;
+            background:$light-gray;
+            transform: skewX(-20deg);
+        }
+        .navbar-brand.custom-logo-link {
+            display: block;
+            position: relative;
+        }
+    }
 }
