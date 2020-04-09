@@ -5,9 +5,8 @@
 
 /* Navbar */
 nav.navbar {
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     .custom-navbar-logo-wrapper {
-        // background-color: $light-gray;
         position: relative;
         &:before {
             content: '';
@@ -20,8 +19,100 @@ nav.navbar {
             transform: skewX(-20deg);
         }
         .navbar-brand.custom-logo-link {
+            color: $navbar-dark-brand-color;
             display: block;
             position: relative;
+
+            @include hover-focus() {
+                color: $navbar-dark-brand-hover-color;
+            }
         }
     }
+    .navbar-nav {
+        .nav-link {
+          color: $white;
+    
+          @include hover-focus() {
+            color: $navbar-dark-color;
+          }
+    
+          &.disabled {
+            color: $navbar-dark-disabled-color;
+          }
+        }
+    
+        .show > .nav-link,
+        .active > .nav-link,
+        .nav-link.show,
+        .nav-link.active {
+          color: $navbar-dark-color;
+        }
+      }
+    
+      .navbar-toggler {
+        color: $navbar-dark-color;
+        border-color: $navbar-dark-toggler-border-color;
+      }
+    
+      .navbar-toggler-icon {
+        background-image: escape-svg($navbar-dark-toggler-icon-bg);
+      }
+    
+      .navbar-text {
+        color: $navbar-dark-color;
+        a {
+          color: $navbar-dark-active-color;
+    
+          @include hover-focus() {
+            color: $navbar-dark-active-color;
+          }
+        }
+      }
 }
+
+/*
+// White links against a dark background
+.navbar-dark {
+
+  
+    .navbar-nav {
+      .nav-link {
+        color: $navbar-dark-color;
+  
+        @include hover-focus() {
+          color: $navbar-dark-hover-color;
+        }
+  
+        &.disabled {
+          color: $navbar-dark-disabled-color;
+        }
+      }
+  
+      .show > .nav-link,
+      .active > .nav-link,
+      .nav-link.show,
+      .nav-link.active {
+        color: $navbar-dark-active-color;
+      }
+    }
+  
+    .navbar-toggler {
+      color: $navbar-dark-color;
+      border-color: $navbar-dark-toggler-border-color;
+    }
+  
+    .navbar-toggler-icon {
+      background-image: escape-svg($navbar-dark-toggler-icon-bg);
+    }
+  
+    .navbar-text {
+      color: $navbar-dark-color;
+      a {
+        color: $navbar-dark-active-color;
+  
+        @include hover-focus() {
+          color: $navbar-dark-active-color;
+        }
+      }
+    }
+  }*/
