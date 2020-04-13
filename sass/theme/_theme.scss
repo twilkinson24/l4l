@@ -1,8 +1,20 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 // CSS HERE TAYLOR
 
-/* Header */
+/* Global */
+.container:focus {
+  outline: none !important;
+}
 
+/* Header */
+header {
+  #header-menu-address-phone {
+    i {
+      font-size: 1.5rem;
+      opacity: .7;
+    }
+  }
+}
 /* Navbar */
 nav.navbar {
     padding: 1.5rem 0;
