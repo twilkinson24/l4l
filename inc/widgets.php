@@ -167,5 +167,25 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 			)
 		);
 
+ 
+		register_sidebar( array(
+			'name'          => 'Header Telephone Area',
+			'id'            => 'custom-header-phone-widget',
+			'before_widget' => '<div class="widget">',
+			'after_widget'  => '</div>',
+			'before_title'  => '',
+			'after_title'   => '',
+		) );
+
+		register_sidebar( array(
+			'name'          => 'Header Address Area',
+			'id'            => 'custom-header-address-widget',
+			'before_widget' => '<div class="widget">',
+			'after_widget'  => '</div>',
+			'before_title'  => '',
+			'after_title'   => '',
+		) );
+		 
+
 	}
 } // endif function_exists( 'understrap_widgets_init' ).

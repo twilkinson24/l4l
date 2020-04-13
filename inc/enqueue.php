@@ -16,7 +16,7 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 		// Get the theme data.
 		$the_theme     = wp_get_theme();
 		$theme_version = $the_theme->get( 'Version' );
-
+		wp_enqueue_style( 'font-awesome-styles', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css', array(), '5.13.0' );
 		$css_version = $theme_version . '.' . filemtime( get_template_directory() . '/css/theme.min.css' );
 		wp_enqueue_style( 'understrap-styles', get_template_directory_uri() . '/css/theme.min.css', array(), $css_version );
 

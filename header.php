@@ -53,24 +53,34 @@ $container = get_theme_mod( 'understrap_container_type' );
 							</div>
 						</div>
 					<?php } ?><!-- end custom logo -->
-
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="nav-menu-wrapper">
-					<!-- The WordPress Menu goes here -->
-					<?php wp_nav_menu(
-						array(
-							'theme_location'  => 'primary',
-							'container_class' => 'collapse navbar-collapse',
-							'container_id'    => 'navbarNavDropdown',
-							'menu_class'      => 'navbar-nav ml-auto',
-							'fallback_cb'     => '',
-							'menu_id'         => 'main-menu',
-							'depth'           => 2,
-							'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-						)
-					); ?>
+				<div class="address-and-navlinks d-flex flex-column">
+					<div id="header-menu-address-phone">
+						<div id="header-address-widget-area" class="text-white">
+							<div class="d-flex">
+								<div class="address-wrap d-flex">
+									<?php get_template_part( 'sidebar-templates/sidebar', 'headeraddressphone' ); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="nav-menu-wrapper">
+						<!-- The WordPress Menu goes here -->
+						<?php wp_nav_menu(
+							array(
+								'theme_location'  => 'primary',
+								'container_class' => 'collapse navbar-collapse',
+								'container_id'    => 'navbarNavDropdown',
+								'menu_class'      => 'navbar-nav ml-auto',
+								'fallback_cb'     => '',
+								'menu_id'         => 'main-menu',
+								'depth'           => 2,
+								'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+							)
+						); ?>
+					</div>
 				</div>
 
 		</nav><!-- .site-navigation -->
