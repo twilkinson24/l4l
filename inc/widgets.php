@@ -167,7 +167,7 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 			)
 		);
 
- 
+		// custom additions
 		register_sidebar( array(
 			'name'          => 'Header Telephone Area',
 			'id'            => 'custom-header-phone-widget',
@@ -180,6 +180,15 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 		register_sidebar( array(
 			'name'          => 'Header Address Area',
 			'id'            => 'custom-header-address-widget',
+			'before_widget' => '<div class="widget">',
+			'after_widget'  => '</div>',
+			'before_title'  => '',
+			'after_title'   => '',
+		) );
+
+		register_sidebar( array(
+			'name'          => 'Below Header Banner Headline Area',
+			'id'            => 'below-header-banner-heading',
 			'before_widget' => '<div class="widget">',
 			'after_widget'  => '</div>',
 			'before_title'  => '',

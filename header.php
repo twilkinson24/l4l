@@ -24,65 +24,69 @@ $container = get_theme_mod( 'understrap_container_type' );
 <body <?php body_class(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
-
+<header>
 	<!-- ******************* The Navbar Area ******************* -->
-	<div id="wrapper-navbar" itemscope itemtype="http://schema.org/WebSite">
+	<div id="wrapper-navbar" class="bg-dark" itemscope itemtype="http://schema.org/WebSite">
+		<div class="container">
 
-		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
-		<nav class="navbar navbar-expand-md justify-content-between navbar-dark bg-primary">
+			<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
+			<nav class="navbar navbar-expand-md justify-content-between navbar-dark bg-primary">
+
+						<!-- Your site title as branding in the menu -->
+						<?php if ( ! has_custom_logo() ) { ?>
+
+							<?php if ( is_front_page() && is_home() ) : ?>
+
+								<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
+
+							<?php else : ?>
+
+								<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
+
+							<?php endif; ?>
 
 
-					<!-- Your site title as branding in the menu -->
-					<?php if ( ! has_custom_logo() ) { ?>
-
-						<?php if ( is_front_page() && is_home() ) : ?>
-
-							<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
-
-						<?php else : ?>
-
-							<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
-
-						<?php endif; ?>
-
-
-					<?php } else { ?>
-						<div class="custom-navbar-logo-wrapper">
-							<div>
-								<?php the_custom_logo(); ?>
+						<?php } else { ?>
+							<div class="custom-navbar-logo-wrapper">
+								<div>
+									<?php the_custom_logo(); ?>
+								</div>
 							</div>
-						</div>
-					<?php } ?><!-- end custom logo -->
-				<div class="address-and-navlinks d-flex flex-column">
-					<div id="header-menu-address-phone">
-						<div id="header-address-widget-area" class="text-white">
-							<div class="d-flex">
-								<div class="address-wrap d-flex">
-									<?php get_template_part( 'sidebar-templates/sidebar', 'headeraddressphone' ); ?>
+						<?php } ?><!-- end custom logo -->
+					<div class="address-and-navlinks d-flex flex-column">
+						<div id="header-menu-address-phone">
+							<div id="header-address-widget-area" class="text-white">
+								<div class="d-flex">
+									<div class="address-wrap d-flex">
+										<?php get_template_part( 'sidebar-templates/sidebar', 'headeraddressphone' ); ?>
+									</div>
 								</div>
 							</div>
 						</div>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="nav-menu-wrapper">
+							<!-- The WordPress Menu goes here -->
+							<?php wp_nav_menu(
+								array(
+									'theme_location'  => 'primary',
+									'container_class' => 'collapse navbar-collapse',
+									'container_id'    => 'navbarNavDropdown',
+									'menu_class'      => 'navbar-nav ml-auto',
+									'fallback_cb'     => '',
+									'menu_id'         => 'main-menu',
+									'depth'           => 2,
+									'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+								)
+							); ?>
+						</div>
 					</div>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="nav-menu-wrapper">
-						<!-- The WordPress Menu goes here -->
-						<?php wp_nav_menu(
-							array(
-								'theme_location'  => 'primary',
-								'container_class' => 'collapse navbar-collapse',
-								'container_id'    => 'navbarNavDropdown',
-								'menu_class'      => 'navbar-nav ml-auto',
-								'fallback_cb'     => '',
-								'menu_id'         => 'main-menu',
-								'depth'           => 2,
-								'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-							)
-						); ?>
-					</div>
-				</div>
 
-		</nav><!-- .site-navigation -->
-
+			</nav><!-- .site-navigation -->
+		</div>
 	</div><!-- #wrapper-navbar end -->
+	<?php if ( is_active_sidebar( 'below-header-banner-heading' ) ) : ?>
+		<h2 id="banner-headline" class="text-center"><?php dynamic_sidebar( 'below-header-banner-heading' ); ?></h2>
+	<?php endif; ?>
+</header>
