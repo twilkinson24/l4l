@@ -87,6 +87,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 		</div>
 	</div><!-- #wrapper-navbar end -->
 	<?php if ( is_active_sidebar( 'below-header-banner-heading' ) ) : ?>
-		<h2 id="banner-headline" class="text-center"><?php dynamic_sidebar( 'below-header-banner-heading' ); ?></h2>
+		<div id="banner-headline" class="text-center text-white py-3"><?php dynamic_sidebar( 'below-header-banner-heading' ); ?></div>
 	<?php endif; ?>
 </header>

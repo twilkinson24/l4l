@@ -5,6 +5,16 @@
 .container:focus {
   outline: none !important;
 }
+.btn-green {
+  border-color: $green;
+  color: $green !important;
+}
+
+#banner-headline {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: $light-green;
+  box-shadow: 0 4px 10px 0px $gray-500;
+}
 
 /* Header */
 header {
@@ -13,6 +23,9 @@ header {
       font-size: 1.5rem;
       opacity: .7;
     }
+  }
+  .entry-title {
+    color: $orange;
   }
 }
 /* Navbar */
