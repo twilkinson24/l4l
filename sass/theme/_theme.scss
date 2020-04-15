@@ -13,7 +13,8 @@
 #banner-headline {
   font-family: 'Times New Roman', Times, serif;
   background-color: $light-green;
-  box-shadow: 0 4px 10px 0px $gray-500;
+  //box-shadow: 0 8px 6px -6px $gray-500;
+  box-shadow: 0 4px 4px -2px $gray-500;
 }
 
 /* Header */
@@ -29,10 +30,22 @@ header {
   }
 }
 /* Navbar */
-nav.navbar {
+body nav.navbar {
     padding: 1.5rem 0;
+    flex-wrap: nowrap;
+    .navbar-toggler {
+      border-color: $green !important;
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(103, 158, 56,0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+      }
+    }
+    
+
     .custom-navbar-logo-wrapper {
         position: relative;
+        @media only screen and (max-width: 768px){
+          max-width: 75%;
+        }
         &:before {
             content: '';
             position: absolute;
