@@ -39,7 +39,6 @@ body nav.navbar {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(103, 158, 56,0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
       }
     }
-    
 
     .custom-navbar-logo-wrapper {
         position: relative;
@@ -65,6 +64,29 @@ body nav.navbar {
                 color: $navbar-dark-brand-hover-color;
             }
         }
+    }
+    .address-and-navlinks {
+      @media only screen and (max-width: 768px) {
+        position: relative;
+      }
+
+      .nav-menu-wrapper {
+        @media only screen and (max-width: 768px) {
+          position: absolute;
+          top: 100%;
+          left: -100%;
+          width: 200px;
+
+          #navbarNavDropdown {
+            background-color: #333;
+            border-radius: .25rem;
+
+            li {
+              padding: 0 1rem;
+            }
+          }
+        }
+      }
     }
     .navbar-nav {
         .nav-link {
