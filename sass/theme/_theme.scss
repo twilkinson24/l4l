@@ -1,5 +1,10 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
-// CSS HERE TAYLOR
+// CSS HERE
+
+.home header .entry-title {
+  max-width: 600px;
+	margin: 0 auto 1rem auto;
+}
 
 /* Global */
 .container:focus {
@@ -89,43 +94,43 @@ body nav.navbar {
       }
     }
     .navbar-nav {
-        .nav-link {
-          color: $white;
-    
-          @include hover-focus() {
-            color: $navbar-dark-color;
-          }
-    
-          &.disabled {
-            color: $navbar-dark-disabled-color;
-          }
-        }
-    
-        .show > .nav-link,
-        .active > .nav-link,
-        .nav-link.show,
-        .nav-link.active {
+      .nav-link {
+        color: $white;
+  
+        @include hover-focus() {
           color: $navbar-dark-color;
         }
-      }
-    
-      .navbar-toggler {
-        color: $navbar-dark-color;
-        border-color: $navbar-dark-toggler-border-color;
-      }
-    
-      .navbar-toggler-icon {
-        background-image: escape-svg($navbar-dark-toggler-icon-bg);
-      }
-    
-      .navbar-text {
-        color: $navbar-dark-color;
-        a {
-          color: $navbar-dark-active-color;
-    
-          @include hover-focus() {
-            color: $navbar-dark-active-color;
-          }
+  
+        &.disabled {
+          color: $navbar-dark-disabled-color;
         }
       }
+  
+      .show > .nav-link,
+      .active > .nav-link,
+      .nav-link.show,
+      .nav-link.active {
+        color: $navbar-dark-color;
+      }
+    }
+  
+    .navbar-toggler {
+      color: $navbar-dark-color;
+      border-color: $navbar-dark-toggler-border-color;
+    }
+  
+    .navbar-toggler-icon {
+      background-image: escape-svg($navbar-dark-toggler-icon-bg);
+    }
+  
+    .navbar-text {
+      color: $navbar-dark-color;
+      a {
+        color: $navbar-dark-active-color;
+  
+        @include hover-focus() {
+          color: $navbar-dark-active-color;
+        }
+      }
+    }
 }
